@@ -20,8 +20,12 @@ requirements:
     - pip
   run:
     - python >=3.6
+    # everything here below is in extras_require: move to an "optional requirements" field as soon as conda allows it
     - aiofiles
+    - graphene
+    - itsdangerous
     - python-multipart
+    - pyyaml
     - requests
     - ujson
 
@@ -34,7 +38,7 @@ about:
   home: https://www.starlette.io/
   license: BSD-3-Clause
   license_family: BSD
-  # PR to include license_file in srd distribution https://github.com/encode/starlette/pull/121
+  # PR to include license_file in src distribution https://github.com/encode/starlette/pull/121
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.md'
   summary: 'The little ASGI framework that shines. ✨'
   description: |
