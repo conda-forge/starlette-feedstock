@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.8.4" %}
+{% set version = "0.9.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 46bb46447870b4ca3fe8bb09b4f0f4c6fa7beb45d7d1ef2a9119552a546157b2
+  sha256: 01f04283b49a8cb0c8921baa90dbafe47e953f0a265f6ebb38176038e4bd9bf8
 
 build:
   noarch: python
@@ -20,13 +20,18 @@ requirements:
     - pip
   run:
     - python >=3.6
-    # everything here below is in extras_require: move to an "optional requirements" field as soon as conda allows it
+    # everything here below is in extras_require: 
+    # move to an "optional requirements" field as 
+    # soon as conda allows it
     - aiofiles
+    - asyncpg
     - graphene
     - itsdangerous
+    - jinja2
     - python-multipart
     - pyyaml
     - requests
+    - sqlalchemy
     - ujson
 
 test:
