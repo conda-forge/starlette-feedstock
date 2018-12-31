@@ -20,13 +20,18 @@ requirements:
     - pip
   run:
     - python >=3.6
-    # everything here below is in extras_require: move to an "optional requirements" field as soon as conda allows it
+    # everything here below is in extras_require: 
+    # move to an "optional requirements" field as 
+    # soon as conda allows it
     - aiofiles
+    - asyncpg
     - graphene
     - itsdangerous
+    - jinja2
     - python-multipart
     - pyyaml
     - requests
+    - sqlalchemy
     - ujson
 
 test:
