@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
 
 requirements:
   host:
@@ -44,7 +44,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   # PR to include license_file in src distribution https://github.com/encode/starlette/pull/121
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.md'
+  license_file: /LICENSE.md
   summary: 'The little ASGI framework that shines. ✨'
   description: |
     Starlette is a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/)
