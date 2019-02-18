@@ -31,13 +31,12 @@ requirements:
     - python-multipart
     - pyyaml
     - requests
-    - sqlalchemy
+    - databases
     - ujson
 
 test:
-  imports:
-    - starlette.responses
-    - starlette.applications
+  commands:
+    - "{{ PYTHON }} -c 'from starlette import *'"
 
 about:
   home: https://www.starlette.io/
