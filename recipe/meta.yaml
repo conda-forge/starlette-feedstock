@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -24,14 +24,12 @@ requirements:
     # move to an "optional requirements" field as 
     # soon as conda allows it
     - aiofiles
-    - asyncpg
     - graphene
     - itsdangerous
     - jinja2
     - python-multipart
     - pyyaml
     - requests
-    - databases
     - ujson
 
 test:
