@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.12.10" %}
+{% set version = "0.12.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e41ef52e711a82ef95c195674e5d8d41c75c6b1d6f5a275637eedd4cc2150a7f
+  sha256: 65f2a3697a6c0d7917fa7e5bd9bfbef04bc1207fbf0b9e575d8de46c96964c26
 
 build:
   noarch: python
