@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.13.2" %}
+{% set version = "0.13.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a9bb130fa7aa736eda8a814b6ceb85ccf7a209ed53843d0d61e246b380afa10f
+  sha256: e15689e130a358c5cb220b9aad1e7bcb8052504c321235dab431f065c77f010d
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -41,7 +41,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.md
-  summary: 'The little ASGI framework that shines. ✨'
+  summary: The little ASGI framework that shines. ✨
   description: |
     Starlette is a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/)
     framework/toolkit.
