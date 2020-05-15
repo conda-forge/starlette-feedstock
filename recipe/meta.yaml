@@ -11,26 +11,34 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    # everything here below is in extras_require: 
-    # move to an "optional requirements" field as 
-    # soon as conda allows it
-    - aiofiles
-    - graphene
-    - itsdangerous
-    - jinja2
-    - python-multipart
-    - pyyaml
-    - requests
-    - ujson
+outputs:
+  - name: {{ name }}-core
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+
+  - name: {{ name }}
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+        - {{ pin_subpackage('name-core', max_pin='x.x.x') }}
+        - aiofiles
+        - graphene
+        - itsdangerous
+        - jinja2
+        - python-multipart
+        - pyyaml
+        - requests
+        - ujson
 
 test:
   commands:
