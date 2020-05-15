@@ -34,7 +34,7 @@ outputs:
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('name-core', max_pin='x.x.x') }}
+        - {{ pin_subpackage('starlette-core', max_pin='x.x.x') }}
         - aiofiles
         - graphene
         - itsdangerous
