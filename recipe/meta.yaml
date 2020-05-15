@@ -14,6 +14,10 @@ build:
   number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
+test:
+  commands:
+    - python -c "from starlette import *"
+
 outputs:
   - name: {{ name }}-core
     requirements:
@@ -39,10 +43,6 @@ outputs:
         - pyyaml
         - requests
         - ujson
-
-test:
-  commands:
-    - python -c "from starlette import *"
 
 about:
   home: https://www.starlette.io/
