@@ -11,7 +11,6 @@ source:
 
 build:
    number: 1
-   script: python -m pip install . -vv
 
 test:
   commands:
@@ -21,6 +20,7 @@ outputs:
   - name: {{ name }}-core
     build:
       noarch: python
+      script: python -m pip install . -vv
     requirements:
       host:
         - python >=3.6
@@ -31,6 +31,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
+      script: python -m pip install . -vv
     requirements:
       host:
         - python >=3.6
