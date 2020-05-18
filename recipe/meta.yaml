@@ -20,7 +20,7 @@ outputs:
     build:
       noarch: python
       number: {{ build_number }}
-      script: {{ PYTHON }} -m pip install . -vv
+      script: python -m pip install . -vv
     requirements:
       host:
         - python >=3.6
@@ -32,7 +32,7 @@ outputs:
     build:
       noarch: python
       number: {{ build_number }}
-      script: {{ PYTHON }} -m pip install . -vv
+      script: python -m pip install . -vv
     requirements:
       host:
         - python >=3.6
