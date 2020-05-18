@@ -1,6 +1,6 @@
 {% set name = "starlette" %}
 {% set version = "0.13.4" %}
-{% set build_numer = "1" %}
+{% set build_number = "1" %}
 
 package:
   name: {{ name|lower }}
