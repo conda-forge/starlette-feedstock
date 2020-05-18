@@ -1,5 +1,6 @@
 {% set name = "starlette" %}
 {% set version = "0.13.4" %}
+{% set build_numer = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -9,32 +10,44 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 04fe51d86fd9a594d9b71356ed322ccde5c9b448fc716ac74155e5821a922f8d
 
-build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    # everything here below is in extras_require: 
-    # move to an "optional requirements" field as 
-    # soon as conda allows it
-    - aiofiles
-    - graphene
-    - itsdangerous
-    - jinja2
-    - python-multipart
-    - pyyaml
-    - requests
-    - ujson
 
 test:
   commands:
     - python -c "from starlette import *"
+
+outputs:
+  - name: {{ name }}-core
+    build:
+      noarch: python
+      number: {{ build_number }}
+      script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+
+  - name: {{ name }}
+    build:
+      noarch: python
+      number: {{ build_number }}
+      script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+        - {{ pin_subpackage('starlette-core', max_pin='x.x.x') }}
+        - aiofiles
+        - graphene
+        - itsdangerous
+        - jinja2
+        - python-multipart
+        - pyyaml
+        - requests
+        - ujson
 
 about:
   home: https://www.starlette.io/
