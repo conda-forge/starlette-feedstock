@@ -20,7 +20,7 @@ outputs:
   - name: {{ name }}-core
     build:
       noarch: python
-      script: python -m pip install . -vv
+      script: build_base.sh
     requirements:
       host:
         - python >=3.6
@@ -31,7 +31,7 @@ outputs:
   - name: {{ name }}
     build:
       noarch: python
-      script: python -m pip install . -vv
+      script: build_base.sh
     requirements:
       host:
         - python >=3.6
