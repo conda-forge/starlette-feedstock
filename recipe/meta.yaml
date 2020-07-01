@@ -11,6 +11,7 @@ source:
 
 build:
    number: 1
+   noarch: python
 
 test:
   commands:
@@ -18,20 +19,18 @@ test:
 
 outputs:
   - name: {{ name }}-core
-    build:
-      noarch: python
-      script: build_base.sh
+    script: build_base.sh
     requirements:
       host:
         - python >=3.6
         - pip
       run:
         - python >=3.6
+    test:
+      imports:
+        - starlette
 
   - name: {{ name }}
-    build:
-      noarch: python
-      script: build_base.sh
     requirements:
       host:
         - python >=3.6
