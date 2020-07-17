@@ -5,7 +5,7 @@ Home: https://www.starlette.io/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: The little ASGI framework that shines. ✨
 
