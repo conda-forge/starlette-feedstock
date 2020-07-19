@@ -5,7 +5,7 @@ Home: https://www.starlette.io/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: The little ASGI framework that shines. ✨
 
@@ -20,11 +20,50 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4344&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/starlette-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4344&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/starlette-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4344&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/starlette-feedstock?branchName=master&jobName=linux&configuration=linux_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4344&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/starlette-feedstock?branchName=master&jobName=osx&configuration=osx_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4344&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/starlette-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>Linux_ppc64le</td>
+    <td>
+      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
@@ -35,6 +74,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-starlette-green.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-starlette--core-green.svg)](https://anaconda.org/conda-forge/starlette-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/starlette-core.svg)](https://anaconda.org/conda-forge/starlette-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/starlette-core.svg)](https://anaconda.org/conda-forge/starlette-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/starlette-core.svg)](https://anaconda.org/conda-forge/starlette-core) |
 
 Installing starlette
 ====================
@@ -45,10 +85,10 @@ Installing `starlette` from the `conda-forge` channel can be achieved by adding 
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `starlette` can be installed with:
+Once the `conda-forge` channel has been enabled, `starlette, starlette-core` can be installed with:
 
 ```
-conda install starlette
+conda install starlette starlette-core
 ```
 
 It is possible to list all of the versions of `starlette` available on your platform with:
@@ -122,4 +162,5 @@ Feedstock Maintainers
 =====================
 
 * [@carlodri](https://github.com/carlodri/)
+* [@dgasmith](https://github.com/dgasmith/)
 
