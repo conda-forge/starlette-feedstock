@@ -31,13 +31,15 @@ outputs:
         - starlette
 
   - name: {{ name }}
+    build:
+       noarch: python
     requirements:
       host:
         - python >=3.6
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('starlette-core', max_pin='x.x.x') }}
+        - {{ pin_subpackage('starlette-core', exact=True) }}
         - aiofiles
         - graphene
         - itsdangerous
@@ -46,6 +48,9 @@ outputs:
         - pyyaml
         - requests
         - ujson
+    test:
+      imports:
+        - starlette
 
 about:
   home: https://www.starlette.io/
