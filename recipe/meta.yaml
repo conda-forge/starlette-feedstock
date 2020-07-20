@@ -18,7 +18,7 @@ test:
     - python -c "from starlette import *"
 
 outputs:
-  - name: {{ name }}-core
+  - name: {{ name }}-base
     script: build_base.sh
     requirements:
       host:
