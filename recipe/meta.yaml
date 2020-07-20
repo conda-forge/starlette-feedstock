@@ -10,8 +10,8 @@ source:
   sha256: 27eb45ea740ea0d379b3adcd3ba53b538b5176d89daa3e8d96220f15630ae38a
 
 build:
-   number: 2
-   noarch: python
+  number: 2
+  noarch: python
 
 test:
   commands:
@@ -32,7 +32,7 @@ outputs:
 
   - name: {{ name }}
     build:
-       noarch: python
+      noarch: python
     requirements:
       host:
         - python >=3.6
