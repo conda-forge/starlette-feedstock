@@ -39,7 +39,7 @@ outputs:
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('starlette-core', exact=True) }}
+        - {{ pin_subpackage('starlette-base', exact=True) }}
         - aiofiles
         - graphene
         - itsdangerous
