@@ -19,6 +19,8 @@ test:
 
 outputs:
   - name: {{ name }}-base
+    build:
+      noarch: python
     script: build_base.sh
     requirements:
       host:
@@ -31,8 +33,6 @@ outputs:
         - starlette
 
   - name: {{ name }}
-    build:
-      noarch: python
     requirements:
       host:
         - python >=3.6
