@@ -35,6 +35,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-starlette-green.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-starlette--base-green.svg)](https://anaconda.org/conda-forge/starlette-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/starlette-base.svg)](https://anaconda.org/conda-forge/starlette-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/starlette-base.svg)](https://anaconda.org/conda-forge/starlette-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/starlette-base.svg)](https://anaconda.org/conda-forge/starlette-base) |
 
 Installing starlette
 ====================
@@ -45,10 +46,10 @@ Installing `starlette` from the `conda-forge` channel can be achieved by adding 
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `starlette` can be installed with:
+Once the `conda-forge` channel has been enabled, `starlette, starlette-base` can be installed with:
 
 ```
-conda install starlette
+conda install starlette starlette-base
 ```
 
 It is possible to list all of the versions of `starlette` available on your platform with:
@@ -122,4 +123,5 @@ Feedstock Maintainers
 =====================
 
 * [@carlodri](https://github.com/carlodri/)
+* [@dgasmith](https://github.com/dgasmith/)
 
