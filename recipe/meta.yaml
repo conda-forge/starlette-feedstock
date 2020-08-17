@@ -12,10 +12,6 @@ source:
 build:
   number: 0
 
-test:
-  commands:
-    - python -c "from starlette import *"
-
 outputs:
   - name: {{ name }}
     build:
@@ -28,8 +24,8 @@ outputs:
       run:
         - python >=3.6
     test:
-      imports:
-        - starlette
+      commands:
+        - python -c "from starlette import *"
 
   - name: {{ name }}-full
     build:
@@ -50,8 +46,8 @@ outputs:
         - requests
         - ujson
     test:
-      imports:
-        - starlette
+      commands:
+        - python -c "from starlette import *"
 
 about:
   home: https://www.starlette.io/
