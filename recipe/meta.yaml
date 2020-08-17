@@ -2,7 +2,7 @@
 {% set version = "0.13.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-recipe
   version: {{ version }}
 
 source:
@@ -11,14 +11,13 @@ source:
 
 build:
   number: 0
-  noarch: python
 
 test:
   commands:
     - python -c "from starlette import *"
 
 outputs:
-  - name: {{ name }}-base
+  - name: {{ name }}
     build:
       noarch: python
     script: build_base.sh
@@ -32,14 +31,16 @@ outputs:
       imports:
         - starlette
 
-  - name: {{ name }}
+  - name: {{ name }}-full
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.6
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('starlette-base', exact=True) }}
+        - {{ pin_subpackage('starlette', exact=True) }}
         - aiofiles
         - graphene
         - itsdangerous
