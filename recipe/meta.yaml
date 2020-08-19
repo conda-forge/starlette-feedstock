@@ -1,24 +1,19 @@
 {% set name = "starlette" %}
-{% set version = "0.13.6" %}
+{% set version = "0.13.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-recipe
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ebe8ee08d9be96a3c9f31b2cb2a24dbdf845247b745664bd8a3f9bd0c977fdbc
+  sha256: 82df29b2149437ad828a883674bf031788600c876dae50835e98398bd1706183
 
 build:
   number: 0
-  noarch: python
-
-test:
-  commands:
-    - python -c "from starlette import *"
 
 outputs:
-  - name: {{ name }}-base
+  - name: {{ name }}
     build:
       noarch: python
     script: build_base.sh
@@ -29,17 +24,19 @@ outputs:
       run:
         - python >=3.6
     test:
-      imports:
-        - starlette
+      commands:
+        - python -c "from starlette import *"
 
-  - name: {{ name }}
+  - name: {{ name }}-full
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.6
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('starlette-base', exact=True) }}
+        - {{ pin_subpackage('starlette', exact=True) }}
         - aiofiles
         - graphene
         - itsdangerous
@@ -49,8 +46,8 @@ outputs:
         - requests
         - ujson
     test:
-      imports:
-        - starlette
+      commands:
+        - python -c "from starlette import *"
 
 about:
   home: https://www.starlette.io/
