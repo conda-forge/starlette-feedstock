@@ -5,9 +5,13 @@ Home: https://www.starlette.io/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/master/LICENSE.txt)
 
 Summary: The little ASGI framework that shines. ✨
+
+Development: https://github.com/encode/starlette/
+
+Documentation: https://www.starlette.io/
 
 Starlette is a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/)
 framework/toolkit.
