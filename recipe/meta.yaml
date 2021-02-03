@@ -44,7 +44,6 @@ outputs:
         - python-multipart
         - pyyaml
         - requests
-        - ujson
     test:
       commands:
         - python -c "from starlette import *"
