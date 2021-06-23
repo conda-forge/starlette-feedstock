@@ -23,6 +23,7 @@ outputs:
         - pip
       run:
         - python >=3.6
+        - anyio >=3.0.0,<4.0.0a
     test:
       commands:
         - python -c "from starlette import *"
