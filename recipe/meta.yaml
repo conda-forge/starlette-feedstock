@@ -38,8 +38,6 @@ outputs:
       run:
         - python >=3.6
         - {{ pin_subpackage('starlette', exact=True) }}
-        - aiofiles
-        - graphene
         - itsdangerous
         - jinja2
         - python-multipart
