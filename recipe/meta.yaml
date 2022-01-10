@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.17.0" %}
+{% set version = "0.17.1" %}
 
 package:
   name: {{ name|lower }}-recipe
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 31a889e7d7bf487f70d9d197ed7efadb47fa938c58626ed93e381480833c5b84
+  sha256: 57eab3cc975a28af62f6faec94d355a410634940f10b30d68d31cb5ec1b44ae8
 
 build:
   number: 0
@@ -19,10 +19,10 @@ outputs:
     script: build_base.sh
     requirements:
       host:
-        - python >=3.6
+        - python >=3.8
         - pip
       run:
-        - python >=3.6
+        - python >=3.8
         - anyio >=3.0.0,<4.0.0a
     test:
       commands:
@@ -33,10 +33,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.6
+        - python >=3.8
         - pip
       run:
-        - python >=3.6
+        - python >=3.8
         - {{ pin_subpackage('starlette', exact=True) }}
         - itsdangerous
         - jinja2
