@@ -10,33 +10,41 @@ source:
   sha256: b45c6e9a617ecb5caf7e6446bd8d767b0084d6217e8e1b08187ca5191e10f097
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
     build:
-      noarch: python
-    script: build_base.sh
+      script: python -m pip install . --no-deps --no-build-isolation -vv
+    # No longer a noarch pacakage due to the dependence on
+    # typing_extension for anything below python 3.10
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.8
+        - python
         - pip
       run:
-        - python >=3.8
-        - anyio >=3.0.0,<4.0.0a
+        - python
+        - anyio >=3.4.0,<5.0.0a
+        - typing_extensions   # [py<310]
     test:
       commands:
         - python -c "from starlette import *"
 
   - name: {{ name }}-full
     build:
-      noarch: python
+      script: echo Nothing to do.
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.8
+        - python
         - pip
       run:
-        - python >=3.8
+        - python
         - {{ pin_subpackage('starlette', exact=True) }}
         - itsdangerous
         - jinja2
