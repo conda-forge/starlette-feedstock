@@ -31,6 +31,7 @@ outputs:
     test:
       commands:
         - python -c "from starlette import *"
+        - python -c "assert (__import__("pathlib").Path(__import__('starlette').__file__).parent / "py.typed").exists()"
 
   - name: {{ name }}-full
     build:
