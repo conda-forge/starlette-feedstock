@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.21.0" %}
+{% set version = "0.20.4" %}
 
 package:
   name: {{ name|lower }}-recipe
@@ -7,29 +7,31 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b1b52305ee8f7cfc48cde383496f7c11ab897cd7112b33d998b1317dc8ef9027
+  sha256: 42fcf3122f998fefce3e2c5ad7e5edbf0f02cf685d646a83a08d404726af5084
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
   - name: {{ name }}
     build:
-      script: python -m pip install . --no-deps --no-build-isolation -vv
+      script:
+        - python -c "__import__('pathlib').Path('starlette/py.typed').touch()"
+        - python -m pip install . --no-deps --no-build-isolation -vv
       noarch: python
     requirements:
       host:
-        - hatchling
         - python >=3.7
         - pip
       run:
         - python >=3.7
-        - anyio <5,>=3.4.0
-        - typing_extensions >=3.10.0
+        - anyio >=3.4.0,<5.0.0a
+        - typing_extensions
     test:
       commands:
         - python -c "from starlette import *"
+        - python -c "assert (__import__('pathlib').Path(__import__('starlette').__file__).parent / 'py.typed').exists()"
 
   - name: {{ name }}-full
     build:
@@ -37,7 +39,6 @@ outputs:
       noarch: python
     requirements:
       host:
-        - hatchling
         - python >=3.7
         - pip
       run:
@@ -47,7 +48,7 @@ outputs:
         - jinja2
         - python-multipart
         - pyyaml
-        - httpx >=0.22.0
+        - requests
     test:
       commands:
         - python -c "from starlette import *"
@@ -57,7 +58,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.md
-  summary: The little ASGI framework that shines.
+  summary: The little ASGI framework that shines. ✨
   description: |
     Starlette is a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/)
     framework/toolkit.

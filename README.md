@@ -7,7 +7,7 @@ Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/main/LICENSE.txt)
 
-Summary: The little ASGI framework that shines.
+Summary: The little ASGI framework that shines. ✨
 
 Development: https://github.com/encode/starlette/
 
