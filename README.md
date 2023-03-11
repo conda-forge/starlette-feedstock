@@ -1,11 +1,11 @@
-About starlette-recipe
-======================
+About starlette-recipe-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.starlette.io/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/main/LICENSE.txt)
 
 Summary: The little ASGI framework that shines.
 
