@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.26.0.post1" %}
+{% set version = "0.26.1" %}
 
 package:
   name: {{ name|lower }}-recipe
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: af0e54d08afed70fcbc53ae01e71c9c62c8ab038ff8cfd3f7477bf0f086b5ab4
+  sha256: 41da799057ea8620e4667a3e69a5b1923ebd32b1819c8fa75634bbe8d8bea9bd
 
 build:
   number: 0
