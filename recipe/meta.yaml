@@ -39,10 +39,10 @@ outputs:
     requirements:
       host:
         - hatchling
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage('starlette', exact=True) }}
         - itsdangerous
         - jinja2
