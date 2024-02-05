@@ -46,7 +46,7 @@ outputs:
         - {{ pin_subpackage('starlette', exact=True) }}
         - itsdangerous
         - jinja2
-        - python-multipart
+        - python-multipart >=0.0.7
         - pyyaml
         - httpx >=0.22.0
     test:
