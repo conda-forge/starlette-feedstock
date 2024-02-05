@@ -1,5 +1,5 @@
 {% set name = "starlette" %}
-{% set version = "0.36.3" %}
+{% set version = "0.37.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 90a671733cfb35771d8cc605e0b679d23b992f8dcfad48cc60b38cb29aeb7080
+  sha256: d1ec71a84fd1f691b800361a6a64ecb0e9c17ab308507ccc7f911727888293c7
 
 build:
   number: 0
@@ -46,7 +46,7 @@ outputs:
         - {{ pin_subpackage('starlette', exact=True) }}
         - itsdangerous
         - jinja2
-        - python-multipart
+        - python-multipart >=0.0.7
         - pyyaml
         - httpx >=0.22.0
     test:
