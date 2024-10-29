@@ -1,5 +1,5 @@
-About starlette-recipe-feedstock
-================================
+About starlette-feedstock
+=========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/main/LICENSE.txt)
 
@@ -41,10 +41,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-starlette-green.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/starlette.svg)](https://anaconda.org/conda-forge/starlette) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-starlette--full-green.svg)](https://anaconda.org/conda-forge/starlette-full) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/starlette-full.svg)](https://anaconda.org/conda-forge/starlette-full) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/starlette-full.svg)](https://anaconda.org/conda-forge/starlette-full) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/starlette-full.svg)](https://anaconda.org/conda-forge/starlette-full) |
 
-Installing starlette-recipe
-===========================
+Installing starlette
+====================
 
-Installing `starlette-recipe` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `starlette` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -130,17 +130,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating starlette-recipe-feedstock
-===================================
+Updating starlette-feedstock
+============================
 
-If you would like to improve the starlette-recipe recipe or build a new
+If you would like to improve the starlette recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/starlette-recipe-feedstock are
+Note that all branches in the conda-forge/starlette-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
