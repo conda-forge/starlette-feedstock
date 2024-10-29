@@ -1,6 +1,6 @@
 {% set version = "0.41.2" %}
 
-{% set PYTHON = PYTHON | undefined("$PYTHON") %}
+{% set PYTHON = PYTHON | default("$PYTHON") %}
 
 package:
   name: starlette
