@@ -1,4 +1,4 @@
-{% set version = "0.41.2" %}
+{% set version = "0.41.3" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/starlette/starlette-{{ version }}.tar.gz
-  sha256: 9834fd799d1a87fd346deb76158668cfa0b0d56f85caefe8268e2d97c3468b62
+  url: https://pypi.org/packages/source/s/starlette/starlette-{{ version }}.tar.gz
+  sha256: 0e4ab3d16522a255be6b28260b938eae2482f98ce5cc934cb08dce8dc3ba5835
 
 build:
   number: 0
@@ -22,15 +22,16 @@ requirements:
   host:
     - hatchling
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - anyio >=3.4.0,<5
-    - python >=3.8
+    - python >={{ python_min }}
     - typing_extensions >=3.10.0
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - starlette
   commands:
@@ -53,6 +54,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - starlette
       commands:
