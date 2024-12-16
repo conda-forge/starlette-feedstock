@@ -1,4 +1,4 @@
-{% set version = "0.41.3" %}
+{% set version = "0.42.0" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-{{ version }}.tar.gz
-  sha256: 0e4ab3d16522a255be6b28260b938eae2482f98ce5cc934cb08dce8dc3ba5835
+  sha256: 91f1fbd612f3e3d821a8a5f46bf381afe2a9722a7b8bbde1c07fb83384c2882a
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python -m pip install . --no-deps --no-build-isolation -vv --disable-pip-version-check
 
