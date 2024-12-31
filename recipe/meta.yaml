@@ -1,4 +1,4 @@
-{% set version = "0.45.0" %}
+{% set version = "0.45.1" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-{{ version }}.tar.gz
-  sha256: ca7ee855c243a058a2f24bc832b8072bade47fbc2672ce4b98de66c7f6c924f0
+  sha256: a8ae1fa3b1ab7ca83a4abd77871921a13fb5aeaf4874436fb96c29dfcd4ecfa3
 
 build:
   number: 0
