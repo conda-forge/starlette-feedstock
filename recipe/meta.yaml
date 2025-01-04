@@ -24,7 +24,7 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - anyio >=3.4.0,<5
+    - anyio >=3.6.2,<5
     - python >={{ python_min }}
     - typing_extensions >=3.10.0
 
