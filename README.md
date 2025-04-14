@@ -19,7 +19,6 @@ framework/toolkit.
 It is ideal for building high performance asyncio services, and supports
 both HTTP and WebSockets.
 
-
 Current build status
 ====================
 
