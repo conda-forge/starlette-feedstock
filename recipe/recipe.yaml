@@ -47,6 +47,10 @@ outputs:
     build:
       noarch: generic
     requirements:
+      host:
+        - hatchling
+        - pip
+        - python ${{ python_min }}.*
       run:
         - ${{ pin_subpackage('starlette', exact=True) }}
         - httpx >=0.27.0,<0.29.0
