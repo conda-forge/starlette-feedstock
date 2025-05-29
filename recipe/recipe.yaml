@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.46.2
+  version: "0.47.0"
   PYTHON: "\"PYTHON | default(\"$PYTHON\")\""
 
 recipe:
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: 7f7361f34eed179294600af672f565727419830b54b7b084efe44bb82d2fccd5
+  sha256: 1f64887e94a447fed5f23309fb6890ef23349b7e478faa7b24a851cd4eb844af
 
 build:
   number: 0
@@ -23,9 +23,9 @@ outputs:
     requirements:
       build:
         - if: build_platform != target_platform
-          then: python
-        - if: build_platform != target_platform
-          then: cross-python_${{ target_platform }}
+          then:
+            - python
+            - cross-python_${{ target_platform }}
       host:
         - hatchling
         - pip
