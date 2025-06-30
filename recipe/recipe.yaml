@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.47.0"
+  version: "0.47.1"
   PYTHON: "\"PYTHON | default(\"$PYTHON\")\""
 
 recipe:
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: 1f64887e94a447fed5f23309fb6890ef23349b7e478faa7b24a851cd4eb844af
+  sha256: aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b
 
 build:
   number: 0
@@ -33,7 +33,7 @@ outputs:
       run:
         - anyio >=3.6.2,<5
         - python >=${{ python_min }}
-        - typing_extensions >=3.10.0
+        - typing_extensions >=4.10.0
 
     tests:
       - python:
