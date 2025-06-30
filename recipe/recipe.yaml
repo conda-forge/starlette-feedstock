@@ -33,7 +33,7 @@ outputs:
       run:
         - anyio >=3.6.2,<5
         - python >=${{ python_min }}
-        - typing_extensions >=3.10.0
+        - typing_extensions >=4.10.0
 
     tests:
       - python:
