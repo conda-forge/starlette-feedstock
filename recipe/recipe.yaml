@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.47.1"
+  version: "0.47.2"
   PYTHON: "\"PYTHON | default(\"$PYTHON\")\""
 
 recipe:
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b
+  sha256: 6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8
 
 build:
   number: 0
