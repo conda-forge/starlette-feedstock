@@ -1,8 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 schema_version: 1
 
 context:
-  version: "0.47.1"
-  PYTHON: "\"PYTHON | default(\"$PYTHON\")\""
+  version: "0.47.2"
+  python_check_max: "3.13"
 
 recipe:
   name: starlette
@@ -10,12 +11,13 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: aef012dd2b6be325ffa16698f9dc533614fb1cebd593a906b90dc1025529a79b
+  sha256: 6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install . --no-deps --no-build-isolation -vv --disable-pip-version-check
+  script:
+    - ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv --disable-pip-version-check
 
 outputs:
   - package:
@@ -37,10 +39,11 @@ outputs:
 
     tests:
       - python:
-          imports:
-            - starlette
+          imports: starlette
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
 
   - package:
       name: starlette-full
@@ -60,10 +63,11 @@ outputs:
         - pyyaml
     tests:
       - python:
-          imports:
-            - starlette
+          imports: starlette
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
 
 about:
   license: BSD-3-Clause
@@ -85,3 +89,4 @@ extra:
     - carlodri
     - dgasmith
     - thewchan
+    - bollwyvl
