@@ -80,7 +80,7 @@ about:
     It is ideal for building high performance asyncio services, and supports
     both HTTP and WebSockets.
   homepage: https://www.starlette.io/
-  repository: https://github.com/encode/starlette/
+  repository: https://github.com/Kludex/starlette
   documentation: https://www.starlette.io/
 
 extra:
