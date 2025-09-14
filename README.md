@@ -9,7 +9,7 @@ Package license: BSD-3-Clause
 
 Summary: The little ASGI framework that shines.
 
-Development: https://github.com/encode/starlette/
+Development: https://github.com/Kludex/starlette
 
 Documentation: https://www.starlette.io/
 

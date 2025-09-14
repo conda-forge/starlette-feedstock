@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.47.3"
+  version: "0.48.0"
   python_check_max: "3.13"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: 6bc94f839cc176c4858894f1f8908f0ab79dfec1a6b8402f6da9be26ebea52e9
+  sha256: 7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46
 
 build:
   number: 0
@@ -80,7 +80,7 @@ about:
     It is ideal for building high performance asyncio services, and supports
     both HTTP and WebSockets.
   homepage: https://www.starlette.io/
-  repository: https://github.com/encode/starlette/
+  repository: https://github.com/Kludex/starlette
   documentation: https://www.starlette.io/
 
 extra:
