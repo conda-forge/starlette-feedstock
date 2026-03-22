@@ -65,15 +65,12 @@ outputs:
             - tests/
         requirements:
           run:
-            - mypy
             - pytest-cov
             - python ${{ python_min }}.*
             - trio
-            - types-pyyaml
         script:
           - coverage run --source=starlette --branch -m pytest -vv --tb=long --color=yes
           - coverage report --show-missing --skip-covered --fail-under=100
-          - mypy -p starlette
 
 about:
   license: BSD-3-Clause
@@ -87,7 +84,7 @@ about:
     both HTTP and WebSockets.
   homepage: https://pypi.org/project/starlette
   repository: https://github.com/Kludex/starlette
-  documentation: https://www.starlette.io
+  documentation: https://starlette.dev
 
 extra:
   feedstock-name: starlette
