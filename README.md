@@ -11,7 +11,7 @@ Summary: The little ASGI framework that shines.
 
 Development: https://github.com/Kludex/starlette
 
-Documentation: https://www.starlette.io/
+Documentation: https://starlette.dev/
 
 Starlette is a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/)
 framework/toolkit.
