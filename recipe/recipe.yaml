@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   version: "1.0.0"
-  python_check_max: "3.13"
+  python_check_max: "3.14"
 
 recipe:
   name: starlette
@@ -17,7 +17,7 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 outputs:
   - package:
@@ -79,9 +79,9 @@ about:
 
     It is ideal for building high performance asyncio services, and supports
     both HTTP and WebSockets.
-  homepage: https://www.starlette.io/
+  homepage: https://pypi.org/project/starlette
   repository: https://github.com/Kludex/starlette
-  documentation: https://www.starlette.io/
+  documentation: https://www.starlette.io
 
 extra:
   feedstock-name: starlette
