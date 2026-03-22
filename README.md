@@ -3,7 +3,7 @@ About starlette-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.starlette.io/
+Home: https://pypi.org/project/starlette
 
 Package license: BSD-3-Clause
 
