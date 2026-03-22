@@ -3,7 +3,7 @@ About starlette-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starlette-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.starlette.io/
+Home: https://pypi.org/project/starlette
 
 Package license: BSD-3-Clause
 
@@ -11,7 +11,7 @@ Summary: The little ASGI framework that shines.
 
 Development: https://github.com/Kludex/starlette
 
-Documentation: https://www.starlette.io/
+Documentation: https://starlette.dev/
 
 Starlette is a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/)
 framework/toolkit.
@@ -23,11 +23,10 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4344&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/starlette-feedstock?branchName=main">
-      </a>
+      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
     </td>
   </tr>
 </table>
