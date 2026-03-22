@@ -16,18 +16,15 @@ source:
 build:
   number: 0
   noarch: python
-  script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 outputs:
   - package:
       name: starlette
+    build:
+      noarch: python
+      script:
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
     requirements:
-      build:
-        - if: build_platform != target_platform
-          then:
-            - python
-            - cross-python_${{ target_platform }}
       host:
         - hatchling
         - pip
@@ -36,7 +33,6 @@ outputs:
         - anyio >=3.6.2,<5
         - python >=${{ python_min }}
         - typing_extensions >=4.10.0
-
     tests:
       - python:
           imports: starlette
@@ -50,12 +46,8 @@ outputs:
     build:
       noarch: generic
     requirements:
-      host:
-        - hatchling
-        - pip
-        - python ${{ python_min }}.*
       run:
-        - ${{ pin_subpackage('starlette', exact=True) }}
+        - ${{ pin_subpackage("starlette", exact=True) }}
         - httpx >=0.27.0,<0.29.0
         - itsdangerous
         - jinja2
@@ -68,6 +60,20 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
+      - files:
+          source:
+            - tests/
+        requirements:
+          run:
+            - mypy
+            - pytest-cov
+            - python ${{ python_min }}.*
+            - trio
+            - types-pyyaml
+        script:
+          - coverage run --source=starlette --branch -m pytest -vv --tb=long --color=yes
+          - coverage report --show-missing --skip-covered --fail-under=100
+          - mypy -p starlette
 
 about:
   license: BSD-3-Clause
