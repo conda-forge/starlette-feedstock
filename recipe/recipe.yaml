@@ -53,6 +53,7 @@ outputs:
         - jinja2
         - python-multipart >=0.0.18
         - pyyaml
+        - zstandard >=0.18.0
     tests:
       - python:
           imports: starlette
