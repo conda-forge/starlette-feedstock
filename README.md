@@ -51,31 +51,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `starlette, starlette-full` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install starlette starlette-full
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install starlette starlette-full
 ```
 
-It is possible to list all of the versions of `starlette` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add starlette starlette-full
+# for installing globally
+pixi global install starlette starlette-full
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `starlette` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search starlette --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search starlette --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search starlette --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -87,6 +129,8 @@ mamba repoquery whoneeds starlette --channel conda-forge
 # List dependencies of `starlette`:
 mamba repoquery depends starlette --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -159,5 +203,4 @@ Feedstock Maintainers
 * [@carlodri](https://github.com/carlodri/)
 * [@dgasmith](https://github.com/dgasmith/)
 * [@thewchan](https://github.com/thewchan/)
-
 
