@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.6.0"
+  version: "1.7.0"
   python_check_max: "3.14"
 
 recipe:
@@ -10,8 +10,8 @@ recipe:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b
+  url: https://files.pythonhosted.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
+  sha256: c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d
 
 build:
   number: 0
@@ -23,17 +23,22 @@ outputs:
     build:
       noarch: python
       script:
-        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
     requirements:
       host:
         - hatchling
         - pip
         - python ${{ python_min }}.*
       run:
-        - anyio >=3.6.2,<5
+        - anyio >=4,<5
         - python >=${{ python_min }}
         - typing_extensions >=4.10.0
     tests:
+      - package_contents:
+          strict: true
+          site_packages:
+            - starlette/**
+            - starlette-${{ version }}.dist-info/**
       - python:
           imports: starlette
           pip_check: true
@@ -52,9 +57,9 @@ outputs:
         - httpx2 >=2.0.0
         - itsdangerous
         - jinja2
+        - opentelemetry-api
         - python-multipart >=0.0.18
         - pyyaml
-        - zstandard >=0.18.0
     tests:
       - python:
           imports: starlette
@@ -67,9 +72,13 @@ outputs:
             - tests/
         requirements:
           run:
-            - pytest-cov
+            - python-blockbuster >=1.5.23
+            - opentelemetry-sdk >=1.44.0
+            - pytest >=9.1.1
+            - coverage >=7.8.2
             - python ${{ python_min }}.*
-            - trio
+            - trio >=0.34.0
+            - backports.zstd
         script:
           - coverage run --source=starlette --branch -m pytest -vv --tb=long --color=yes
           - coverage report --show-missing --skip-covered --fail-under=100
