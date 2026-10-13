@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.7.0"
+  version: "1.8.0"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/starlette/starlette-${{ version }}.tar.gz
-  sha256: c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d
+  sha256: 1565dc0b35d5737a271ed1e0e04e949f4e81198799f216d2667b0a0fb9cf9522
 
 build:
   number: 0
